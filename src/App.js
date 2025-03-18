@@ -816,48 +816,56 @@ const SolarPlantFinancialAnalysis = () => {
               <td>Initial Investment</td>
               {viewMode === 'comparison' ? (
                 <>
-                  <td className="metric-value">{formatCurrency(settings.fixedInitialInvestment)}</td>
-                  <td className="metric-value">{formatCurrency(settings.trackingInitialInvestment)}</td>
-                  <td className="metric-value">{formatCurrency(settings.trackingInitialInvestment - settings.fixedInitialInvestment)}</td>
+                  <td data-label="Fixed System" className="metric-value">{formatCurrency(settings.fixedInitialInvestment)}</td>
+                  <td data-label="Tracking System" className="metric-value">{formatCurrency(settings.trackingInitialInvestment)}</td>
+                  <td data-label="Difference" className="metric-value">{formatCurrency(settings.trackingInitialInvestment - settings.fixedInitialInvestment)}</td>
                 </>
               ) : (
-                <td className="metric-value">{formatCurrency(viewMode === 'fixed' ? settings.fixedInitialInvestment : settings.trackingInitialInvestment)}</td>
+                <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                  {formatCurrency(viewMode === 'fixed' ? settings.fixedInitialInvestment : settings.trackingInitialInvestment)}
+                </td>
               )}
             </tr>
             <tr>
               <td>NPV ({isLevered ? 'Levered' : 'Unlevered'})</td>
               {viewMode === 'comparison' ? (
                 <>
-                  <td className="metric-value">{formatCurrency(fixedSystemFinancials.npv)}</td>
-                  <td className="metric-value">{formatCurrency(trackingSystemFinancials.npv)}</td>
-                  <td className="metric-value">{formatCurrency(trackingSystemFinancials.npv - fixedSystemFinancials.npv)}</td>
+                  <td data-label="Fixed System" className="metric-value">{formatCurrency(fixedSystemFinancials.npv)}</td>
+                  <td data-label="Tracking System" className="metric-value">{formatCurrency(trackingSystemFinancials.npv)}</td>
+                  <td data-label="Difference" className="metric-value">{formatCurrency(trackingSystemFinancials.npv - fixedSystemFinancials.npv)}</td>
                 </>
               ) : (
-                <td className="metric-value">{formatCurrency(selectedSystemData.npv)}</td>
+                <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                  {formatCurrency(selectedSystemData.npv)}
+                </td>
               )}
             </tr>
             <tr>
               <td>ROE ({isLevered ? 'Levered' : 'Unlevered'})</td>
               {viewMode === 'comparison' ? (
                 <>
-                  <td className="metric-value">{formatPercentage(fixedSystemFinancials.roe)}</td>
-                  <td className="metric-value">{formatPercentage(trackingSystemFinancials.roe)}</td>
-                  <td className="metric-value">{formatPercentage(trackingSystemFinancials.roe - fixedSystemFinancials.roe)}</td>
+                  <td data-label="Fixed System" className="metric-value">{formatPercentage(fixedSystemFinancials.roe)}</td>
+                  <td data-label="Tracking System" className="metric-value">{formatPercentage(trackingSystemFinancials.roe)}</td>
+                  <td data-label="Difference" className="metric-value">{formatPercentage(trackingSystemFinancials.roe - fixedSystemFinancials.roe)}</td>
                 </>
               ) : (
-                <td className="metric-value">{formatPercentage(selectedSystemData.roe)}</td>
+                <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                  {formatPercentage(selectedSystemData.roe)}
+                </td>
               )}
             </tr>
             <tr>
               <td>Payback Period ({isLevered ? 'Levered' : 'Unlevered'})</td>
               {viewMode === 'comparison' ? (
                 <>
-                  <td className="metric-value">{formatNumber(fixedSystemFinancials.paybackPeriod)}</td>
-                  <td className="metric-value">{formatNumber(trackingSystemFinancials.paybackPeriod)}</td>
-                  <td className="metric-value">{formatNumber(trackingSystemFinancials.paybackPeriod - fixedSystemFinancials.paybackPeriod)}</td>
+                  <td data-label="Fixed System" className="metric-value">{formatNumber(fixedSystemFinancials.paybackPeriod)}</td>
+                  <td data-label="Tracking System" className="metric-value">{formatNumber(trackingSystemFinancials.paybackPeriod)}</td>
+                  <td data-label="Difference" className="metric-value">{formatNumber(trackingSystemFinancials.paybackPeriod - fixedSystemFinancials.paybackPeriod)}</td>
                 </>
               ) : (
-                <td className="metric-value">{formatNumber(selectedSystemData.paybackPeriod)}</td>
+                <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                  {formatNumber(selectedSystemData.paybackPeriod)}
+                </td>
               )}
             </tr>
             {isLevered && (
@@ -865,12 +873,14 @@ const SolarPlantFinancialAnalysis = () => {
                 <td>Average DSCR</td>
                 {viewMode === 'comparison' ? (
                   <>
-                    <td className="metric-value">{formatNumber(fixedSystemFinancials.averageDSCR)}</td>
-                    <td className="metric-value">{formatNumber(trackingSystemFinancials.averageDSCR)}</td>
-                    <td className="metric-value">{formatNumber(trackingSystemFinancials.averageDSCR - fixedSystemFinancials.averageDSCR)}</td>
+                    <td data-label="Fixed System" className="metric-value">{formatNumber(fixedSystemFinancials.averageDSCR)}</td>
+                    <td data-label="Tracking System" className="metric-value">{formatNumber(trackingSystemFinancials.averageDSCR)}</td>
+                    <td data-label="Difference" className="metric-value">{formatNumber(trackingSystemFinancials.averageDSCR - fixedSystemFinancials.averageDSCR)}</td>
                   </>
                 ) : (
-                  <td className="metric-value">{formatNumber(selectedSystemData.averageDSCR)}</td>
+                  <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                    {formatNumber(selectedSystemData.averageDSCR)}
+                  </td>
                 )}
               </tr>
             )}
@@ -878,12 +888,14 @@ const SolarPlantFinancialAnalysis = () => {
               <td>Total Profit (25 years)</td>
               {viewMode === 'comparison' ? (
                 <>
-                  <td className="metric-value">{formatCurrency(fixedSystemFinancials.totalProfit)}</td>
-                  <td className="metric-value">{formatCurrency(trackingSystemFinancials.totalProfit)}</td>
-                  <td className="metric-value">{formatCurrency(trackingSystemFinancials.totalProfit - fixedSystemFinancials.totalProfit)}</td>
+                  <td data-label="Fixed System" className="metric-value">{formatCurrency(fixedSystemFinancials.totalProfit)}</td>
+                  <td data-label="Tracking System" className="metric-value">{formatCurrency(trackingSystemFinancials.totalProfit)}</td>
+                  <td data-label="Difference" className="metric-value">{formatCurrency(trackingSystemFinancials.totalProfit - fixedSystemFinancials.totalProfit)}</td>
                 </>
               ) : (
-                <td className="metric-value">{formatCurrency(selectedSystemData.totalProfit)}</td>
+                <td data-label={viewMode === 'fixed' ? 'Fixed System' : 'Tracking System'} className="metric-value">
+                  {formatCurrency(selectedSystemData.totalProfit)}
+                </td>
               )}
             </tr>
           </tbody>

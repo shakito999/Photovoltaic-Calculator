@@ -66,6 +66,8 @@
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+  max-width: 100vw;
+  table-layout: fixed;
 }
 
 .data-table th,
@@ -73,6 +75,62 @@
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.data-table .metric-value {
+  text-align: right;
+}
+
+/* Mobile responsive table styles */
+@media screen and (max-width: 768px) {
+  .data-table {
+    font-size: 0.85em;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem;
+  }
+
+  /* Special handling for comparison view */
+  .data-table.comparison-view {
+    font-size: 0.75em;
+    transform: scale(0.9);
+    transform-origin: left top;
+    width: 111%;
+  }
+
+  .data-table.comparison-view th,
+  .data-table.comparison-view td {
+    padding: 0.4rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 450px) {
+  .data-table {
+    font-size: 0.80em;
+  }
+
+  .data-table.comparison-view {
+    font-size: 0.80em;
+    transform: scale(0.95);
+    width: 105%;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.35rem;
+  }
+}
+
+/* Chart wrapper - remove horizontal scroll */
+.chart-wrapper {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .data-table th {
@@ -387,16 +445,6 @@
     height: calc(100vh - 80px);
   }
 
-  .data-table {
-    font-size: 0.9em;
-  }
-
-  .data-table th,
-  .data-table td {
-    padding: 0.5rem;
-  }
-
-  /* Ensure bottom padding for scrollable content */
   .pie-charts-container {
     padding-bottom: 100px;
   }
