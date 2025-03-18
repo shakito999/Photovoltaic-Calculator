@@ -1,0 +1,11 @@
+Fixed System OPEX (Year 1)	
+	
+Component	Cost (EUR)
+Balancing Fee	 610 914,00 € 
+Maintenance	 322 500,00 € 
+Insurance	 129 000,00 € 
+Monitoring & Performance Analysis	 100 000,00 € 
+Administrative Expenses	 400 000,00 € 
+Security	 200 000,00 € 
+Reserve Funds	 200 000,00 € 
+Total OPEX	 1 962 414,00 € 

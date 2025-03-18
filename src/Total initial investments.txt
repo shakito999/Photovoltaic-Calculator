@@ -1,0 +1,15 @@
+Type	Quantity		Price in EUR	Total	
+Solar Panels - (JinkoSolar 700W)	142,857	pcs.	96.6	13,799,986.20	
+Inverters - (Sungrow SG320HX)	32	pcs.	96	3,072,000.00	
+Fence	8000	meters	15	120,000.00	
+Static Construction*	100,000,000	Watt	0.05	5,000,000.00	Only one of the two should be calculated at a time. Either the Static construction or the Single Axis Tracker
+Single Axis Tracker*	100,000,000	Watt	0.08	8,000,000.00	
+Grid Connection	6	km	50	300,000.00	
+Land Lease	956	decare	800	764,800.00	
+Site preparation	956	decare	50	47,800.00	
+Foundations	100,000,000	Watt	0.03	3,000,000.00	
+Electrical equipment	100,000,000	Watt	0.07	7,000,000.00	
+Monitoring Systems	1	system	150	150,000.00	
+Engineering	1	project	750	750,000.00	
+Construction	1	project	1,000,000	1,000,000.00	
+Total				43,004,586.20	
