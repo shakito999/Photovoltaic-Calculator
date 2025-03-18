@@ -111,11 +111,11 @@
 /* Extra small screens */
 @media screen and (max-width: 450px) {
   .data-table {
-    font-size: 0.80em;
+    font-size: 0.75em;
   }
 
   .data-table.comparison-view {
-    font-size: 0.80em;
+    font-size: 0.75em;
     transform: scale(0.95);
     width: 105%;
   }
