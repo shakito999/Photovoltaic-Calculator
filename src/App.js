@@ -10,7 +10,7 @@ const SolarPlantFinancialAnalysis = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [showCostBreakdown, setShowCostBreakdown] = useState(false);
-  const [showPieCharts, setShowPieCharts] = useState(true);
+  const [showPieCharts, setShowPieCharts] = useState(false);
   const [expandedChart, setExpandedChart] = useState(null);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
