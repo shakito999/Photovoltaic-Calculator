@@ -128,9 +128,13 @@
 
 /* Chart wrapper - remove horizontal scroll */
 .chart-wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+.chart-wrapper .recharts-wrapper {
+  overflow: hidden;
 }
 
 .data-table th {
